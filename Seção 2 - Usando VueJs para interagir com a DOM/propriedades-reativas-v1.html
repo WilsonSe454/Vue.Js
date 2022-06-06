@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <label>Input com v-bind:value="titulo" v-on:input="titulo = $event.target.value"</label>
+    <br>
+    <input type="text" v-bind:value="titulo"
+        v-on:input="titulo = $event.target.value"> <!-- v-bind de uma direção, do JavaScript para o HTML. O v-on de uma direção, do HTML para o JavaScript  -->
+    <br>
+    <label>v-model="titulo"</label>
+    <br>
+    <input type="text" v-model="titulo"><!-- v-model vai para as duas direções, tanto JavaScript como HTML -->
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            titulo: 'Testendo VueJs'
+        }
+    })
+</script>
