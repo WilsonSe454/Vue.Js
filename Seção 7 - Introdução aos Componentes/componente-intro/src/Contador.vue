@@ -41,6 +41,7 @@
     background-color:coral;
     color: #fff;
     margin-left:10px;
+    margin-right:10px;
     outline: none;
   }
 </style>
