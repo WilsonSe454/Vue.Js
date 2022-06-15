@@ -2,10 +2,15 @@
     <div class="container">
         <h1>Componente Usuário</h1>
         <p>Esse é um componente muito legal!</p>
+        <p>Nome é <strong>{{ nome }}</strong></p>
         <button @click="alterarNome">Alterar nome</button>
         <hr>
         <div class="componentes">
-            <app-usuario-info :nome="nome" :sobrenome="sobrenome"/>
+            <app-usuario-info 
+                :nome="nome" 
+                :sobrenome="sobrenome"
+                @nomeMudou="nome = $event"
+                :reiniciarFn="reiniciarNome"/>
             <app-usuario-editar />
         </div>
     </div>
@@ -26,6 +31,9 @@ export default {
     methods: {
         alterarNome() {
             this.nome = 'Ana'
+        },
+        reiniciarNome() {
+            this.nome = 'Pedro'
         }
     }
 }
