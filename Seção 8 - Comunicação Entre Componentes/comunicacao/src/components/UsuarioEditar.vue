@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import barramento from '../barramento'// o @ leva direto para o src/
 export default {
     // Várias formas de declarar as props
     /* props: {
@@ -26,7 +27,10 @@ export default {
     // props: ['nome','idade','idadeAL'],
     methods: {
         alterarIdade() {
-            this.$emit('idadeMudou', this.idadeAL())//está emitindo um evento para o elemento pai
+            // this.$emit('idadeMudou', this.idadeAL())//está emitindo um evento para o elemento pai
+            this.idade += 1
+            // barramento.$emit('idadeMudou', this.idade)//Usando o barramento para fazer a comunicação entre elemento irmãos
+            barramento.alterarIdade(this.idade)//Usando o barramento para fazer a comunicação entre elemento irmãos. Usando uma função dentro do barramento.
         }
     }
 

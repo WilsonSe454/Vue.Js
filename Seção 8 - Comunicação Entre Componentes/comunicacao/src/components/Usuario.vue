@@ -17,8 +17,9 @@
             <app-usuario-editar 
                 :nome="nome"
                 :idade="idade"
-                :idadeAL="idadeAleatoria"
-                @idadeMudou="idade = $event"/><!-- Evento que vem do elemento filho -->
+                :idadeAL="idadeAleatoria"/>
+                <!--@idadeMudou="idade = $event"/> @idadeMudou="idade = $event" Evento que vem do elemento filho -->
+                
                 
         </div>
     </div>

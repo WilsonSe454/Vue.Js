@@ -16,7 +16,7 @@ npm run electron:build
 {
     Fechar porta 
     netstat -o
-    tskill pid número de pois da coluna estado
+    tskill pid número depois da coluna estado
 }
 {
     pwd comando para descobrir nome do diretório

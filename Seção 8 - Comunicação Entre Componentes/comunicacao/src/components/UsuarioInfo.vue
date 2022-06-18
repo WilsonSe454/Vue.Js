@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import barramento from '../barramento'// o @ leva direto para o src/
 export default {
     // props: ['nome'],
     props: {
@@ -44,6 +45,14 @@ export default {
                 antigo
             }) */
         }
+    },
+    created() {
+        /* barramento.$on('idadeMudou', idade => {
+            this.idade = idade
+        }) */
+        barramento.quandoIdadeMudar(idade => {
+            this.idade = idade
+        })// usando uma função dentro do barramento
     }
 }
 </script>
