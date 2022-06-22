@@ -1,8 +1,12 @@
 <template>
 	<div id="app">
-		<usuario-lista :usuarios="usuarios" />
+		<usuario-lista :usuarios="usuarios" /><!-- Propriedade passada por referência -->
 		<usuario-detalhe />
 	</div>
+	<!-- <div id="app">
+		<usuario-lista :usuarios="[...usuarios]" /> Passa um clone e não por referência 
+		<usuario-detalhe />
+	</div> -->
 </template>
 
 <script>
