@@ -1,12 +1,12 @@
 <template>
     <div class="citacao">
-        
+        <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-
+    // props:['texto'] não precisa passar propriedade se for usado a tag o slot
 }
 </script>
 
