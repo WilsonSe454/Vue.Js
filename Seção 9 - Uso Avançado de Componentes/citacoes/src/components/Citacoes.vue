@@ -8,7 +8,11 @@
         <!-- {{ citacoes[indice].texto }} -->
         <!-- <Citacao :texto="citacoes[indice].texto"></Citacao> -->
         <Citacao> 
-            <slot><p>{{ citacoes[indice].texto }}</p></slot>
+            <slot>
+                <h1>{{ citacoes[indice].autor }}</h1>
+                <p>{{ citacoes[indice].texto }}</p>
+                <h6>{{ citacoes[indice].fonte }}</h6>
+            </slot>
         </Citacao>
     </div>
 </template>
@@ -61,5 +65,8 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    h1 {
+        color: red;
     }
 </style>
