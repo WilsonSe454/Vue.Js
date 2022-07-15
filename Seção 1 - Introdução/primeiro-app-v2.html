@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <input type="text" v-on:input="alterarTitulo"> <!-- Use a diretiva v-on para alterar o titulo -->
+    <p>{{ titulo }}</p><!-- Para acessar os dados da instância Vue basta usar o double mustache-->
+</div>
+
+<script>
+    new Vue({ //cria um instância Vue
+        el: '#app', //elemento que a instância vai controlar
+        data: { // Aqui é definido os dados que serão usados pelo templete html que é controlado pela instância Vue
+            titulo: 'Usando VueJS!',
+        },
+        methods: { //Aqui são definidos métodos que serão executado no momento que um evento for disparado.
+            alterarTitulo(){ //alterarTitulo(event) por padrão o evento é passado sempre que um método é associado a um evento dentro da instância do Vue
+                this.titulo = event.target.value
+            }
+        }
+    })
+</script>
