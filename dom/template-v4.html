@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <h1>{{ titulo }}</h1>
+    <h1>{{ saudacao() }}</h1>
+    <!-- Diretivas são propriedades personalisadas -->
+    <a v-bind:href="link">Primeiro-app</a><!-- Use a diretiva v-bind para pegar o endereço que está dentro link -->
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS!',
+            saudacoes: 'Tenha uma boa semana!',
+            link: 'http://127.0.0.1:5500/Introdução/primeiro-app-v1.html'
+        },
+        methods: {
+            saudacao() {
+                console.log(this)// vai mostrar toda a instância do Vue
+                return this.saudacoes
+            }
+        }
+    })
+</script>
