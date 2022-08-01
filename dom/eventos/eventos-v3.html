@@ -1,0 +1,40 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <h1>{{ contador }}</h1>
+    <!-- O $event está sendo passado como segundo parametro -->
+    <button v-on:click="somar(5, $event)">Somar 1</button><!-- v-on é uma diretiva que intercepta o evento quando ele for chamado-->
+
+    <p style="padding: 20px; background: orange; color: white;" v-on:mousemove="atualizarXY">
+        Mouse: x:{{ x }} e y:{{ y }}
+        <span style="background:red; padding: 10px;" v-on:mousemove="parar">PARA AQUI!!!!!</span>
+    </p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            x:0,
+            y:0
+        },
+        methods: {
+            //Não importa o nome da variável que é passada, o primeiro parametro é o event. 
+            //Como foi passado um argumento ele vai desconsideraro o evento.
+            somar(passo, event) { 
+                console.log(passo)
+                console.log(event)
+                this.contador += passo
+            },
+            atualizarXY(event) {
+                console.log(event)
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            parar(event){
+                event.stopPropagation()// Para a propagação do evento
+            }
+        }
+    })
+</script>

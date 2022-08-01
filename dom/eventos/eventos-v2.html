@@ -1,0 +1,32 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <h1>{{ contador }}</h1>
+    <button v-on:click="somar">Somar 1</button><!-- v-on é uma diretiva que intercepta o evento quando ele for chamado-->
+
+    <p style="padding: 20px; background: orange; color: white;" v-on:mousemove="atualizarXY">
+        Mouse: x:{{ x }} e y:{{ y }}
+    </p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            x:0,
+            y:0
+        },
+        methods: {
+            somar(e) { //Não importa o nome da variável que é passada, o primeiro parametro é o event
+                console.log(e)
+                this.contador++
+            },
+            atualizarXY(event) {
+                console.log(event)
+                this.x = event.clientX
+                this.y = event.clientY
+            }
+        }
+    })
+</script>
