@@ -1,17 +1,23 @@
-new Vue({
-    el: '#desafio',
+
+    new Vue({
+        el: '#desafio',
     data: {
-        nome: 'Wilson',
-        idade: 32,
-        img: 'http://files.cod3r.com.br/curso-vue/vue.jpg'
+        nome: 'Fulano',
+        idade: 22,
+        imagem: 'http://files.cod3r.com.br/curso-vue/vue.jpg'
     },
     methods: {
-        multiplicarIdade(vezes){
-            return this.idade * vezes
+        randomico() {
+            numeroRandomico = Math.floor(Math.random() * 11)
+            if (numeroRandomico == 0){
+                console.log(numeroRandomico);
+                this.randomico()
+                
+            }
+            return numeroRandomico  
         },
-        alterarnome(){
+        alterarNome() {
             this.nome = event.target.value
-            return this.nome
         }
     }
 })
