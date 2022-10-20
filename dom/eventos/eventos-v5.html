@@ -1,0 +1,60 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <h1>{{ contador }}</h1>
+    <!-- O $event está sendo passado como segundo parametro -->
+    <button v-on:click="somar(5, $event)">Somar 1</button><!-- v-on é uma diretiva que intercepta o evento quando ele for chamado-->
+
+    <p style="padding: 20px; background: orange; color: white;" v-on:mousemove="atualizarXY">
+        Mouse: x:{{ x }} e y:{{ y }}
+        <span style="background:red; padding: 10px;" v-on:mousemove="parar">PARA AQUI!!!!!</span>
+        <span style="margin-left: 10px; background:blue; padding: 10px;" v-on:mousemove.stop="">PARA AQUI!!!!!</span> <!-- faz a mesma coisa que o stopPropagation-->
+        <span style="margin-left: 10px; background:green; padding: 10px;" v-on:mousemove.stop.prevent="">PARA AQUI!!!!!</span> <!-- faz a mesma coisa que o stopPropagation e previne o comportamento padrão-->
+    </p>
+
+    <a v-on:click.prevent="" href="http://www.google.com.br">Google</a> <!-- O prevent vai previnir o comportamento padrão -->
+    <a v-on:click="naoNavegar" href="http://www.google.com.br">Google 2</a> 
+    <a v-on:click.prevent="naoNavegar2" href="http://www.google.com.br">Google 3</a> 
+
+    <hr>
+
+    <input type="text" v-on:keyup.enter="exibirAlerta"> <!-- Modificadores para evento de teclado. Neste caso só vai chamar a função exibirAlerta quando a tecla enter for precionada -->
+    <input type="text" v-on:keyup.enter.alt="exibirAlerta"> <!-- Modificadores para evento de teclado. Neste caso só vai chamar a função exibirAlerta quando a teclas enter e a alt forem precionada ao mesmo tempo-->
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            x:0,
+            y:0
+        },
+        methods: {
+            // Não importa o nome da variável que é passada, o primeiro parametro é o event. 
+            // Como foi passado mais um parametro, tornandou-se obrigatório a declaração do evento como parametro
+            somar(passo, event) { 
+                console.log(passo)
+                console.log(event)
+                this.contador += passo
+            },
+            atualizarXY(event) {
+                console.log(event)
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            exibirAlerta() {
+                alert('Estou te alertando!')
+            },
+            naoNavegar(e) {
+                e.preventDefault()
+            },
+            naoNavegar2(e) {
+                console.log('Testando naoNavegar2')
+            },
+            parar(e){
+                e.stopPropagation()// Para a propagação do evento
+            }
+        }
+    })
+</script>

@@ -4,7 +4,7 @@
     <p v-once>{{ titulo }}</p>
     <p>{{ saudacao() }}</p>
     <a v-bind:href="link">Google</a>
-    <p v-html="linkHtml"></p>
+    <p v-html="linkHtml"></p> <!-- O v-html vai interpretar o html que está no linkHtml -->
 </div>
 
 <script>
