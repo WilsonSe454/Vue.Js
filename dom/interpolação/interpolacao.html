@@ -1,0 +1,24 @@
+<script src="https://unpkg.com/vue@2"></script>
+
+<div id="app">
+    <p>{{ contador }}</p>
+    <p>{{ contador > 10 ? 'Maior do que 10' : 'Menor ou igual a 10' }}</p>
+    <button v-on:click="somar">Somar 1</button>
+    <hr>
+    <p>Calcule: 1 + 2 + 8 + 9* 200 - 500 = {{ 1+2+8+9*200-500 }}</p>
+    
+</div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0
+            },
+            methods: {
+                somar() {
+                    this.contador++
+                }
+            }
+        })
+    </script>
+</div>
