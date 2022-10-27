@@ -1,0 +1,24 @@
+<script src="https://unpkg.com/vue@2"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <!-- O v-bind é utilizado quando o sentido da alteração vem da Vue instance. Já com v-on é possivel alterar o titulo atráves do input -->
+    <input type="text" v-bind:value="titulo"
+        v-on:input="titulo = $event.target.titulo">
+    <hr>
+    <p>{{ titulo2 }}</p>
+    <!-- v-model garante o two-way-binding, sem precisar usar o v-bind e o v-on na tag, o binding em duas direções-->
+    <input type="text" v-model="titulo2">
+    
+    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS',
+            titulo2: 'Usando VueJS'
+        }
+    })
+</script>
