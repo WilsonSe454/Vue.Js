@@ -1,4 +1,4 @@
-<script src="https://unpkg.com/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 <style>
     #app {
@@ -13,25 +13,23 @@
     .c1 {
         background-color: red;
     }
-    .c2 {
-        background-color: green;
-    }
-    .c3 {
-        background-color: blue;
+    .cor-1 {
+        background-color: yellow;
     }
 </style>
 
 <div id="app">
-    <div class="demo"></div>
-    <div class="demo"></div>
-    <div class="demo"></div>
+    <div class="demo" :class="{c1: aplicarC1}" @click="aplicarC1 = !aplicarC1"></div>
+    <div class="demo" :class="{'cor-1': aplicarC2}" @click="aplicarC2 = !aplicarC2"></div>
+    
 </div>
 
 <script>
     new Vue({
         el: '#app',
         data: {
-
+            aplicarC1:false,
+            aplicarC2:false
         }
     })
 </script>
