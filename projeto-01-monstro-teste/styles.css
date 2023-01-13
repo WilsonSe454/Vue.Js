@@ -1,0 +1,39 @@
+#painel {
+    box-shadow: 1px 1px 5px #808080; 
+    margin: 10px; 
+    width: 1500px;
+    height: 200px;
+    
+}
+#jogador {
+   text-align: center;
+   float: left;
+   margin-left: 150px;
+   
+   
+}
+#monstro {
+    text-align: center; 
+    float: right;
+    margin-right: 150px;
+}
+
+.barra {
+    border: solid 1px;
+    width: 500px;
+    height: 30px;
+}
+#comandos {
+    box-shadow: 1px 1px 5px #808080;    
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 1500px;
+    height: 100px;
+}
+#logs {
+    box-shadow: 1px 1px 5px #808080;    
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 1500px;
+    height: 100px;
+}
