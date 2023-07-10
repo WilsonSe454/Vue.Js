@@ -2,7 +2,11 @@
   <div id="app">
     <h1>Contadores</h1>
     <!-- {{ contador }} -->
-    <app-contador></app-contador>
+    <!-- <app-contadores></app-contadores> -->
+    <app-contadores />
+    <app-contadores />
+    <app-contadores />
+    <app-contadores />
   </div>
 
 </template>

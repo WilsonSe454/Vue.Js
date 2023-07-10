@@ -37,6 +37,8 @@ export default {
         width: 30px;
         border-radius: 15px;
         background-color: coral;
+        color: #fff;
+        margin-left: 10px;
         outline: none;
     }
 
